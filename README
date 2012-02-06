@@ -1,0 +1,1 @@
+This servlet application searches Seattle CraigList postings based on a search word. Currently it searches limited categories(Toys and Baby) and regions(Seattle, Eastside, Snohomish). To run it, place the clsearcher WAR file in Tomcat's webapps. 
