@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE beans PUBLIC
+    "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+<bean id="craigListSearchManager" class="clsearcher.service.CraigListSearchManager">
+    <!-- property name="searchWord" value="lego"/-->
+  </bean>
+    
+  
+  
+</beans>

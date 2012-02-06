@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+        
+         
+  <!-- ビュー名からJSPファイルを紐付けるクラス -->
+  <!--ビュー名がwelcomeの場合，/WEB-INF/jsp/welcome.jspというファイルが次の遷移先画面 -->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+         <property name="prefix" value="/WEB-INF/jsp/"/>
+         <property name="suffix" value=".jsp"/>
+    </bean>
+    
+         <!-- 業務ロジック -->
+   <bean id="searchManager" class="clsearcher.service.CraigListSearchManager">
+    <!-- property name="searchWord" value="lego"/-->
+  </bean>
+  
+  
+    <!--Controller: Bean名にURLを記述することで，サーバーへのリクエストURLとコントローラを対応付け -->
+    <bean name="/home.htm" class="clsearcher.web.HomeController">
+     <property name="searchManager" ref = "searchManager"/>
+   </bean>
+    <bean name="/criteriaform.htm" class="clsearcher.web.SearchController">
+     <property name="searchManager" ref = "searchManager"/>
+    <property name="validator">
+    <bean class="clsearcher.web.CheckBoxValidator"/>
+    </property>
+    </bean>
+    
+         
+   
+   
+ 
+
+</beans>
+ 
